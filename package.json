@@ -1,7 +1,7 @@
 ﻿{
   "name": "cn.etetet.yiuiinvoke",
   "displayName": "ET.YIUI.Invoke",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "unity": "2022.3",
   "category": "UI/YIUI|Extend/Event",
   "description": "独立功能不依赖YIUI 框架 >>> 文档: https://lib9kmxvq7k.feishu.cn/wiki/TpyYwbWIUizhfKkcubocTZgInse",

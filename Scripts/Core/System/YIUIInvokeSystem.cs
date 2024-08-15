@@ -49,6 +49,12 @@ namespace ET
 
         private T GetInvoker<T>(Entity self, string attributeType)
         {
+            if (self == null)
+            {
+                Log.Error($"Entity 不能为null");
+                return default;
+            }
+
             if (m_AllInvokers.TryGetValue(self.GetType(), out var entityTypeDict) && entityTypeDict.TryGetValue(typeof(T), out var systemTypeDict) && systemTypeDict.TryGetValue(attributeType, out var invoker))
             {
                 if (invoker is T tInvoker)

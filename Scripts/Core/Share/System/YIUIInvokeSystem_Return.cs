@@ -9,7 +9,7 @@ namespace ET
         {
             try
             {
-                var invoker = GetInvoker<IYIUIInvokeReturnHnadler<R>>(self, attributeType);
+                var invoker = GetInvoker<IYIUIInvokeReturnHandler<R>>(self, attributeType);
                 if (invoker == null) return default;
                 return invoker.Invoke(self);
             }
@@ -26,7 +26,7 @@ namespace ET
         {
             try
             {
-                var invoker = GetInvoker<IYIUIInvokeReturnHnadler<T1, R>>(self, attributeType);
+                var invoker = GetInvoker<IYIUIInvokeReturnHandler<T1, R>>(self, attributeType);
                 if (invoker == null) return default;
                 return invoker.Invoke(self, arg1);
             }
@@ -43,7 +43,7 @@ namespace ET
         {
             try
             {
-                var invoker = GetInvoker<IYIUIInvokeReturnHnadler<T1, T2, R>>(self, attributeType);
+                var invoker = GetInvoker<IYIUIInvokeReturnHandler<T1, T2, R>>(self, attributeType);
                 if (invoker == null) return default;
                 return invoker.Invoke(self, arg1, arg2);
             }
@@ -60,7 +60,7 @@ namespace ET
         {
             try
             {
-                var invoker = GetInvoker<IYIUIInvokeReturnHnadler<T1, T2, T3, R>>(self, attributeType);
+                var invoker = GetInvoker<IYIUIInvokeReturnHandler<T1, T2, T3, R>>(self, attributeType);
                 if (invoker == null) return default;
                 return invoker.Invoke(self, arg1, arg2, arg3);
             }
@@ -77,7 +77,7 @@ namespace ET
         {
             try
             {
-                var invoker = GetInvoker<IYIUIInvokeReturnHnadler<T1, T2, T3, T4, R>>(self, attributeType);
+                var invoker = GetInvoker<IYIUIInvokeReturnHandler<T1, T2, T3, T4, R>>(self, attributeType);
                 if (invoker == null) return default;
                 return invoker.Invoke(self, arg1, arg2, arg3, arg4);
             }
@@ -94,7 +94,7 @@ namespace ET
         {
             try
             {
-                var invoker = GetInvoker<IYIUIInvokeReturnHnadler<T1, T2, T3, T4, T5, R>>(self, attributeType);
+                var invoker = GetInvoker<IYIUIInvokeReturnHandler<T1, T2, T3, T4, T5, R>>(self, attributeType);
                 if (invoker == null) return default;
                 return invoker.Invoke(self, arg1, arg2, arg3, arg4, arg5);
             }

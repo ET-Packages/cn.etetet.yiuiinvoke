@@ -2,37 +2,37 @@
 
 namespace ET
 {
-    public interface IYIUIInvokeHnadler : ISystemType
+    public interface IYIUIInvokeHandler : ISystemType
     {
         void Invoke(Entity self);
     }
 
-    public interface IYIUIInvokeHnadler<in P1> : ISystemType
+    public interface IYIUIInvokeHandler<in P1> : ISystemType
     {
         void Invoke(Entity self, P1 p1);
     }
 
-    public interface IYIUIInvokeHnadler<in P1, in P2> : ISystemType
+    public interface IYIUIInvokeHandler<in P1, in P2> : ISystemType
     {
         void Invoke(Entity self, P1 p1, P2 p2);
     }
 
-    public interface IYIUIInvokeHnadler<in P1, in P2, in P3> : ISystemType
+    public interface IYIUIInvokeHandler<in P1, in P2, in P3> : ISystemType
     {
         void Invoke(Entity self, P1 p1, P2 p2, P3 p3);
     }
 
-    public interface IYIUIInvokeHnadler<in P1, in P2, in P3, in P4> : ISystemType
+    public interface IYIUIInvokeHandler<in P1, in P2, in P3, in P4> : ISystemType
     {
         void Invoke(Entity self, P1 p1, P2 p2, P3 p3, P4 p4);
     }
 
-    public interface IYIUIInvokeHnadler<in P1, in P2, in P3, in P4, in P5> : ISystemType
+    public interface IYIUIInvokeHandler<in P1, in P2, in P3, in P4, in P5> : ISystemType
     {
         void Invoke(Entity self, P1 p1, P2 p2, P3 p3, P4 p4, P5 p5);
     }
 
-    public abstract class YIUIInvokeHandler<T> : SystemObject, IYIUIInvokeHnadler where T : Entity
+    public abstract class YIUIInvokeHandler<T> : SystemObject, IYIUIInvokeHandler where T : Entity
     {
         Type ISystemType.Type()
         {
@@ -41,7 +41,7 @@ namespace ET
 
         Type ISystemType.SystemType()
         {
-            return typeof(IYIUIInvokeHnadler);
+            return typeof(IYIUIInvokeHandler);
         }
 
         public void Invoke(Entity self)
@@ -52,7 +52,7 @@ namespace ET
         protected abstract void Invoke(T self);
     }
 
-    public abstract class YIUIInvokeHandler<T, P1> : SystemObject, IYIUIInvokeHnadler<P1> where T : Entity
+    public abstract class YIUIInvokeHandler<T, P1> : SystemObject, IYIUIInvokeHandler<P1> where T : Entity
     {
         Type ISystemType.Type()
         {
@@ -61,7 +61,7 @@ namespace ET
 
         Type ISystemType.SystemType()
         {
-            return typeof(IYIUIInvokeHnadler<P1>);
+            return typeof(IYIUIInvokeHandler<P1>);
         }
 
         public void Invoke(Entity self, P1 p1)
@@ -72,7 +72,7 @@ namespace ET
         protected abstract void Invoke(T self, P1 p1);
     }
 
-    public abstract class YIUIInvokeHandler<T, P1, P2> : SystemObject, IYIUIInvokeHnadler<P1, P2> where T : Entity
+    public abstract class YIUIInvokeHandler<T, P1, P2> : SystemObject, IYIUIInvokeHandler<P1, P2> where T : Entity
     {
         Type ISystemType.Type()
         {
@@ -81,7 +81,7 @@ namespace ET
 
         Type ISystemType.SystemType()
         {
-            return typeof(IYIUIInvokeHnadler<P1, P2>);
+            return typeof(IYIUIInvokeHandler<P1, P2>);
         }
 
         public void Invoke(Entity self, P1 p1, P2 p2)
@@ -92,7 +92,7 @@ namespace ET
         protected abstract void Invoke(T self, P1 p1, P2 p2);
     }
 
-    public abstract class YIUIInvokeHandler<T, P1, P2, P3> : SystemObject, IYIUIInvokeHnadler<P1, P2, P3> where T : Entity
+    public abstract class YIUIInvokeHandler<T, P1, P2, P3> : SystemObject, IYIUIInvokeHandler<P1, P2, P3> where T : Entity
     {
         Type ISystemType.Type()
         {
@@ -101,7 +101,7 @@ namespace ET
 
         Type ISystemType.SystemType()
         {
-            return typeof(IYIUIInvokeHnadler<P1, P2, P3>);
+            return typeof(IYIUIInvokeHandler<P1, P2, P3>);
         }
 
         public void Invoke(Entity self, P1 p1, P2 p2, P3 p3)
@@ -112,7 +112,7 @@ namespace ET
         protected abstract void Invoke(T self, P1 p1, P2 p2, P3 p3);
     }
 
-    public abstract class YIUIInvokeHandler<T, P1, P2, P3, P4> : SystemObject, IYIUIInvokeHnadler<P1, P2, P3, P4> where T : Entity
+    public abstract class YIUIInvokeHandler<T, P1, P2, P3, P4> : SystemObject, IYIUIInvokeHandler<P1, P2, P3, P4> where T : Entity
     {
         Type ISystemType.Type()
         {
@@ -121,7 +121,7 @@ namespace ET
 
         Type ISystemType.SystemType()
         {
-            return typeof(IYIUIInvokeHnadler<P1, P2, P3, P4>);
+            return typeof(IYIUIInvokeHandler<P1, P2, P3, P4>);
         }
 
         public void Invoke(Entity self, P1 p1, P2 p2, P3 p3, P4 p4)
@@ -132,7 +132,7 @@ namespace ET
         protected abstract void Invoke(T self, P1 p1, P2 p2, P3 p3, P4 p4);
     }
 
-    public abstract class YIUIInvokeHandler<T, P1, P2, P3, P4, P5> : SystemObject, IYIUIInvokeHnadler<P1, P2, P3, P4, P5> where T : Entity
+    public abstract class YIUIInvokeHandler<T, P1, P2, P3, P4, P5> : SystemObject, IYIUIInvokeHandler<P1, P2, P3, P4, P5> where T : Entity
     {
         Type ISystemType.Type()
         {
@@ -141,7 +141,7 @@ namespace ET
 
         Type ISystemType.SystemType()
         {
-            return typeof(IYIUIInvokeHnadler<P1, P2, P3, P4, P5>);
+            return typeof(IYIUIInvokeHandler<P1, P2, P3, P4, P5>);
         }
 
         public void Invoke(Entity self, P1 p1, P2 p2, P3 p3, P4 p4, P5 p5)

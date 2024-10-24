@@ -9,7 +9,7 @@ namespace ET
         {
             try
             {
-                GetInvoker<IYIUIInvokeHnadler>(self, attributeType)?.Invoke(self);
+                GetInvoker<IYIUIInvokeHandler>(self, attributeType)?.Invoke(self);
             }
             catch (Exception e)
             {
@@ -22,7 +22,7 @@ namespace ET
         {
             try
             {
-                GetInvoker<IYIUIInvokeHnadler<T1>>(self, attributeType)?.Invoke(self, arg1);
+                GetInvoker<IYIUIInvokeHandler<T1>>(self, attributeType)?.Invoke(self, arg1);
             }
             catch (Exception e)
             {
@@ -35,7 +35,7 @@ namespace ET
         {
             try
             {
-                GetInvoker<IYIUIInvokeHnadler<T1, T2>>(self, attributeType)?.Invoke(self, arg1, arg2);
+                GetInvoker<IYIUIInvokeHandler<T1, T2>>(self, attributeType)?.Invoke(self, arg1, arg2);
             }
             catch (Exception e)
             {
@@ -48,7 +48,7 @@ namespace ET
         {
             try
             {
-                GetInvoker<IYIUIInvokeHnadler<T1, T2, T3>>(self, attributeType)?.Invoke(self, arg1, arg2, arg3);
+                GetInvoker<IYIUIInvokeHandler<T1, T2, T3>>(self, attributeType)?.Invoke(self, arg1, arg2, arg3);
             }
             catch (Exception e)
             {
@@ -61,7 +61,7 @@ namespace ET
         {
             try
             {
-                GetInvoker<IYIUIInvokeHnadler<T1, T2, T3, T4>>(self, attributeType)?.Invoke(self, arg1, arg2, arg3, arg4);
+                GetInvoker<IYIUIInvokeHandler<T1, T2, T3, T4>>(self, attributeType)?.Invoke(self, arg1, arg2, arg3, arg4);
             }
             catch (Exception e)
             {
@@ -74,7 +74,7 @@ namespace ET
         {
             try
             {
-                GetInvoker<IYIUIInvokeHnadler<T1, T2, T3, T4, T5>>(self, attributeType)?.Invoke(self, arg1, arg2, arg3, arg4, arg5);
+                GetInvoker<IYIUIInvokeHandler<T1, T2, T3, T4, T5>>(self, attributeType)?.Invoke(self, arg1, arg2, arg3, arg4, arg5);
             }
             catch (Exception e)
             {

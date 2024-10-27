@@ -9,7 +9,24 @@ namespace ET
         {
             try
             {
-                GetInvoker<IYIUIInvokeHandler>(attributeType)?.Invoke(self);
+                var invoker = GetInvoker<IYIUIInvokeHandler>(attributeType);
+                if (invoker == null) return;
+
+                using var list = ListComponent<IYIUIInvokeHandler>.Create();
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(attributeType, list);
+
+                foreach (var listener in list)
+                {
+                    listener.Invoke(self);
+                }
+
+                invoker.Invoke(self);
+
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(attributeType, list);
+                foreach (var listener in list)
+                {
+                    listener.Invoke(self);
+                }
             }
             catch (Exception e)
             {
@@ -22,7 +39,24 @@ namespace ET
         {
             try
             {
-                GetInvoker<IYIUIInvokeHandler<T1>>(attributeType)?.Invoke(self, arg1);
+                var invoker = GetInvoker<IYIUIInvokeHandler<T1>>(attributeType);
+                if (invoker == null) return;
+
+                using var list = ListComponent<IYIUIInvokeHandler<T1>>.Create();
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(attributeType, list);
+
+                foreach (var listener in list)
+                {
+                    listener.Invoke(self, arg1);
+                }
+
+                invoker.Invoke(self, arg1);
+
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(attributeType, list);
+                foreach (var listener in list)
+                {
+                    listener.Invoke(self, arg1);
+                }
             }
             catch (Exception e)
             {
@@ -35,7 +69,24 @@ namespace ET
         {
             try
             {
-                GetInvoker<IYIUIInvokeHandler<T1, T2>>(attributeType)?.Invoke(self, arg1, arg2);
+                var invoker = GetInvoker<IYIUIInvokeHandler<T1, T2>>(attributeType);
+                if (invoker == null) return;
+
+                using var list = ListComponent<IYIUIInvokeHandler<T1, T2>>.Create();
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(attributeType, list);
+
+                foreach (var listener in list)
+                {
+                    listener.Invoke(self, arg1, arg2);
+                }
+
+                invoker.Invoke(self, arg1, arg2);
+
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(attributeType, list);
+                foreach (var listener in list)
+                {
+                    listener.Invoke(self, arg1, arg2);
+                }
             }
             catch (Exception e)
             {
@@ -48,7 +99,24 @@ namespace ET
         {
             try
             {
-                GetInvoker<IYIUIInvokeHandler<T1, T2, T3>>(attributeType)?.Invoke(self, arg1, arg2, arg3);
+                var invoker = GetInvoker<IYIUIInvokeHandler<T1, T2, T3>>(attributeType);
+                if (invoker == null) return;
+
+                using var list = ListComponent<IYIUIInvokeHandler<T1, T2, T3>>.Create();
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(attributeType, list);
+
+                foreach (var listener in list)
+                {
+                    listener.Invoke(self, arg1, arg2, arg3);
+                }
+
+                invoker.Invoke(self, arg1, arg2, arg3);
+
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(attributeType, list);
+                foreach (var listener in list)
+                {
+                    listener.Invoke(self, arg1, arg2, arg3);
+                }
             }
             catch (Exception e)
             {
@@ -61,7 +129,24 @@ namespace ET
         {
             try
             {
-                GetInvoker<IYIUIInvokeHandler<T1, T2, T3, T4>>(attributeType)?.Invoke(self, arg1, arg2, arg3, arg4);
+                var invoker = GetInvoker<IYIUIInvokeHandler<T1, T2, T3, T4>>(attributeType);
+                if (invoker == null) return;
+
+                using var list = ListComponent<IYIUIInvokeHandler<T1, T2, T3, T4>>.Create();
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(attributeType, list);
+
+                foreach (var listener in list)
+                {
+                    listener.Invoke(self, arg1, arg2, arg3, arg4);
+                }
+
+                invoker.Invoke(self, arg1, arg2, arg3, arg4);
+
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(attributeType, list);
+                foreach (var listener in list)
+                {
+                    listener.Invoke(self, arg1, arg2, arg3, arg4);
+                }
             }
             catch (Exception e)
             {
@@ -74,7 +159,24 @@ namespace ET
         {
             try
             {
-                GetInvoker<IYIUIInvokeHandler<T1, T2, T3, T4, T5>>(attributeType)?.Invoke(self, arg1, arg2, arg3, arg4, arg5);
+                var invoker = GetInvoker<IYIUIInvokeHandler<T1, T2, T3, T4, T5>>(attributeType);
+                if (invoker == null) return;
+
+                using var list = ListComponent<IYIUIInvokeHandler<T1, T2, T3, T4, T5>>.Create();
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(attributeType, list);
+
+                foreach (var listener in list)
+                {
+                    listener.Invoke(self, arg1, arg2, arg3, arg4, arg5);
+                }
+
+                invoker.Invoke(self, arg1, arg2, arg3, arg4, arg5);
+
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(attributeType, list);
+                foreach (var listener in list)
+                {
+                    listener.Invoke(self, arg1, arg2, arg3, arg4, arg5);
+                }
             }
             catch (Exception e)
             {

@@ -6,7 +6,7 @@ namespace ET
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class YIUIListenerInvokeAttribute : BaseAttribute
     {
-        public string Type { get; }
+        public string InvokeType { get; }
 
         /// <summary>
         /// 执行优先级
@@ -17,10 +17,10 @@ namespace ET
         public int Priority { get; }
 
         //有此特性将会被SG 自动生成的代码
-        public YIUIListenerInvokeAttribute(string type, int priority = 0)
+        public YIUIListenerInvokeAttribute(string invokeType, int priority = 0)
         {
-            this.Type     = type;
-            this.Priority = priority;
+            this.InvokeType = invokeType;
+            this.Priority   = priority;
         }
     }
 }

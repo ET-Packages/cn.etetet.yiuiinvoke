@@ -6,12 +6,12 @@ namespace ET
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class YIUIInvokeAttribute : BaseAttribute
     {
-        public string Type { get; }
+        public string InvokeType { get; }
 
         //如果有参数必须是Const
-        public YIUIInvokeAttribute(string type)
+        public YIUIInvokeAttribute(string invokeType)
         {
-            this.Type = type;
+            this.InvokeType = invokeType;
         }
 
         //没有参数则SG读取的是方法名

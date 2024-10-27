@@ -2,11 +2,11 @@
 {
     public class YIUIInvokeSystemAttribute : BaseAttribute
     {
-        public string Type { get; }
+        public string InvokeType { get; }
 
-        public YIUIInvokeSystemAttribute(string type)
+        public YIUIInvokeSystemAttribute(string invokeType)
         {
-            this.Type = type;
+            this.InvokeType = invokeType;
         }
     }
 }

@@ -4,16 +4,16 @@ namespace ET
 {
     public partial class YIUIInvokeSystem
     {
-        public void Invoke<T>(T self, string attributeType)
+        public void Invoke<T>(T self, string invokeType)
                 where T : Entity
         {
             try
             {
-                var invoker = GetInvoker<IYIUIInvokeHandler>(attributeType);
+                var invoker = GetInvoker<IYIUIInvokeHandler>(invokeType);
                 if (invoker == null) return;
 
                 using var list = ListComponent<IYIUIInvokeHandler>.Create();
-                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(attributeType, list);
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(invokeType, list);
 
                 foreach (var listener in list)
                 {
@@ -22,7 +22,7 @@ namespace ET
 
                 invoker.Invoke(self);
 
-                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(attributeType, list);
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(invokeType, list);
                 foreach (var listener in list)
                 {
                     listener.Invoke(self);
@@ -30,20 +30,20 @@ namespace ET
             }
             catch (Exception e)
             {
-                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {attributeType} 类型:{typeof(T).Name} {e.Message}");
+                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name} {e.Message}");
             }
         }
 
-        public void Invoke<T, T1>(T self, string attributeType, T1 arg1)
+        public void Invoke<T, T1>(T self, string invokeType, T1 arg1)
                 where T : Entity
         {
             try
             {
-                var invoker = GetInvoker<IYIUIInvokeHandler<T1>>(attributeType);
+                var invoker = GetInvoker<IYIUIInvokeHandler<T1>>(invokeType);
                 if (invoker == null) return;
 
                 using var list = ListComponent<IYIUIInvokeHandler<T1>>.Create();
-                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(attributeType, list);
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(invokeType, list);
 
                 foreach (var listener in list)
                 {
@@ -52,7 +52,7 @@ namespace ET
 
                 invoker.Invoke(self, arg1);
 
-                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(attributeType, list);
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(invokeType, list);
                 foreach (var listener in list)
                 {
                     listener.Invoke(self, arg1);
@@ -60,20 +60,20 @@ namespace ET
             }
             catch (Exception e)
             {
-                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {attributeType} 类型:{typeof(T).Name} {e.Message}");
+                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name} {e.Message}");
             }
         }
 
-        public void Invoke<T, T1, T2>(T self, string attributeType, T1 arg1, T2 arg2)
+        public void Invoke<T, T1, T2>(T self, string invokeType, T1 arg1, T2 arg2)
                 where T : Entity
         {
             try
             {
-                var invoker = GetInvoker<IYIUIInvokeHandler<T1, T2>>(attributeType);
+                var invoker = GetInvoker<IYIUIInvokeHandler<T1, T2>>(invokeType);
                 if (invoker == null) return;
 
                 using var list = ListComponent<IYIUIInvokeHandler<T1, T2>>.Create();
-                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(attributeType, list);
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(invokeType, list);
 
                 foreach (var listener in list)
                 {
@@ -82,7 +82,7 @@ namespace ET
 
                 invoker.Invoke(self, arg1, arg2);
 
-                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(attributeType, list);
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(invokeType, list);
                 foreach (var listener in list)
                 {
                     listener.Invoke(self, arg1, arg2);
@@ -90,20 +90,20 @@ namespace ET
             }
             catch (Exception e)
             {
-                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {attributeType} 类型:{typeof(T).Name} {e.Message}");
+                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name} {e.Message}");
             }
         }
 
-        public void Invoke<T, T1, T2, T3>(T self, string attributeType, T1 arg1, T2 arg2, T3 arg3)
+        public void Invoke<T, T1, T2, T3>(T self, string invokeType, T1 arg1, T2 arg2, T3 arg3)
                 where T : Entity
         {
             try
             {
-                var invoker = GetInvoker<IYIUIInvokeHandler<T1, T2, T3>>(attributeType);
+                var invoker = GetInvoker<IYIUIInvokeHandler<T1, T2, T3>>(invokeType);
                 if (invoker == null) return;
 
                 using var list = ListComponent<IYIUIInvokeHandler<T1, T2, T3>>.Create();
-                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(attributeType, list);
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(invokeType, list);
 
                 foreach (var listener in list)
                 {
@@ -112,7 +112,7 @@ namespace ET
 
                 invoker.Invoke(self, arg1, arg2, arg3);
 
-                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(attributeType, list);
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(invokeType, list);
                 foreach (var listener in list)
                 {
                     listener.Invoke(self, arg1, arg2, arg3);
@@ -120,20 +120,20 @@ namespace ET
             }
             catch (Exception e)
             {
-                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {attributeType} 类型:{typeof(T).Name} {e.Message}");
+                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name} {e.Message}");
             }
         }
 
-        public void Invoke<T, T1, T2, T3, T4>(T self, string attributeType, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
+        public void Invoke<T, T1, T2, T3, T4>(T self, string invokeType, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
                 where T : Entity
         {
             try
             {
-                var invoker = GetInvoker<IYIUIInvokeHandler<T1, T2, T3, T4>>(attributeType);
+                var invoker = GetInvoker<IYIUIInvokeHandler<T1, T2, T3, T4>>(invokeType);
                 if (invoker == null) return;
 
                 using var list = ListComponent<IYIUIInvokeHandler<T1, T2, T3, T4>>.Create();
-                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(attributeType, list);
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(invokeType, list);
 
                 foreach (var listener in list)
                 {
@@ -142,7 +142,7 @@ namespace ET
 
                 invoker.Invoke(self, arg1, arg2, arg3, arg4);
 
-                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(attributeType, list);
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(invokeType, list);
                 foreach (var listener in list)
                 {
                     listener.Invoke(self, arg1, arg2, arg3, arg4);
@@ -150,20 +150,20 @@ namespace ET
             }
             catch (Exception e)
             {
-                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {attributeType} 类型:{typeof(T).Name} {e.Message}");
+                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name} {e.Message}");
             }
         }
 
-        public void Invoke<T, T1, T2, T3, T4, T5>(T self, string attributeType, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
+        public void Invoke<T, T1, T2, T3, T4, T5>(T self, string invokeType, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
                 where T : Entity
         {
             try
             {
-                var invoker = GetInvoker<IYIUIInvokeHandler<T1, T2, T3, T4, T5>>(attributeType);
+                var invoker = GetInvoker<IYIUIInvokeHandler<T1, T2, T3, T4, T5>>(invokeType);
                 if (invoker == null) return;
 
                 using var list = ListComponent<IYIUIInvokeHandler<T1, T2, T3, T4, T5>>.Create();
-                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(attributeType, list);
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerBefore(invokeType, list);
 
                 foreach (var listener in list)
                 {
@@ -172,7 +172,7 @@ namespace ET
 
                 invoker.Invoke(self, arg1, arg2, arg3, arg4, arg5);
 
-                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(attributeType, list);
+                YIUIListenerInvokeSystem.Instance.GetListenerInvokerAfter(invokeType, list);
                 foreach (var listener in list)
                 {
                     listener.Invoke(self, arg1, arg2, arg3, arg4, arg5);
@@ -180,7 +180,7 @@ namespace ET
             }
             catch (Exception e)
             {
-                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {attributeType} 类型:{typeof(T).Name} {e.Message}");
+                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name} {e.Message}");
             }
         }
     }

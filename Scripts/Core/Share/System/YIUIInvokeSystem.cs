@@ -22,7 +22,7 @@ namespace ET
                     continue;
                 }
 
-                var attribute  = (YIUIInvokeSystemAttribute)type.GetCustomAttribute(typeof(YIUIInvokeSystemAttribute), true);
+                var attribute = (YIUIInvokeSystemAttribute)type.GetCustomAttribute(typeof(YIUIInvokeSystemAttribute), true);
                 var invokeType = attribute.InvokeType;
                 handler.InvokeType = invokeType;
 
@@ -33,7 +33,7 @@ namespace ET
             }
         }
 
-        private T GetInvoker<T>(string invokeType)
+        private T GetInvoker<T>(string invokeType, bool isThrowError = true)
         {
             if (m_AllInvokers.TryGetValue(invokeType, out var invoker))
             {
@@ -42,11 +42,19 @@ namespace ET
                     return tInvoker;
                 }
 
-                Log.Error($"找到YIUIInvoke实现请 但类型不一致请检查 {invokeType}  需求:{typeof(T).Name} 实际:{invoker.GetType().Name}");
+                if (isThrowError)
+                {
+                    Log.Error($"找到YIUIInvoke实现请 但类型不一致请检查 {invokeType}  需求:{typeof(T).Name} 实际:{invoker.GetType().Name}");
+                }
+
                 return default;
             }
 
-            Log.Error($"未找到YIUIInvoke实现请检查 {invokeType}  类型:{typeof(T).Name}");
+            if (isThrowError)
+            {
+                Log.Error($"未找到YIUIInvoke实现请检查 {invokeType}  类型:{typeof(T).Name}");
+            }
+
             return default;
         }
     }

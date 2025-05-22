@@ -30,7 +30,7 @@ namespace ET
             }
             catch (Exception e)
             {
-                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name} {e.Message}");
+                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name}, {e}");
             }
         }
 
@@ -60,7 +60,7 @@ namespace ET
             }
             catch (Exception e)
             {
-                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name} {e.Message}");
+                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name}, {e}");
             }
         }
 
@@ -90,7 +90,7 @@ namespace ET
             }
             catch (Exception e)
             {
-                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name} {e.Message}");
+                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name}, {e}");
             }
         }
 
@@ -120,7 +120,7 @@ namespace ET
             }
             catch (Exception e)
             {
-                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name} {e.Message}");
+                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name}, {e}");
             }
         }
 
@@ -150,7 +150,7 @@ namespace ET
             }
             catch (Exception e)
             {
-                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name} {e.Message}");
+                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name}, {e}");
             }
         }
 
@@ -180,7 +180,7 @@ namespace ET
             }
             catch (Exception e)
             {
-                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name} {e.Message}");
+                Log.Error($"YIUIInvoke执行错误请检查{self.GetType().Name} >> {invokeType} 类型:{typeof(T).Name}, {e}");
             }
         }
     }

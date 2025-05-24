@@ -4,9 +4,14 @@ namespace ET
 {
     public partial class YIUIInvokeSystem
     {
-        public void Invoke<T>(T self, string invokeType)
-                where T : Entity
+        public void Invoke<T>(T self, string invokeType) where T : Entity
         {
+            if (self == null || self.IsDisposed)
+            {
+                Log.Error($"self is null or disposed,{invokeType}");
+                return;
+            }
+
             try
             {
                 var invoker = GetInvoker<IYIUIInvokeHandler>(invokeType);
@@ -34,9 +39,14 @@ namespace ET
             }
         }
 
-        public void Invoke<T, T1>(T self, string invokeType, T1 arg1)
-                where T : Entity
+        public void Invoke<T, T1>(T self, string invokeType, T1 arg1) where T : Entity
         {
+            if (self == null || self.IsDisposed)
+            {
+                Log.Error($"self is null or disposed,{invokeType}");
+                return;
+            }
+
             try
             {
                 var invoker = GetInvoker<IYIUIInvokeHandler<T1>>(invokeType);
@@ -64,9 +74,14 @@ namespace ET
             }
         }
 
-        public void Invoke<T, T1, T2>(T self, string invokeType, T1 arg1, T2 arg2)
-                where T : Entity
+        public void Invoke<T, T1, T2>(T self, string invokeType, T1 arg1, T2 arg2) where T : Entity
         {
+            if (self == null || self.IsDisposed)
+            {
+                Log.Error($"self is null or disposed,{invokeType}");
+                return;
+            }
+
             try
             {
                 var invoker = GetInvoker<IYIUIInvokeHandler<T1, T2>>(invokeType);
@@ -94,9 +109,14 @@ namespace ET
             }
         }
 
-        public void Invoke<T, T1, T2, T3>(T self, string invokeType, T1 arg1, T2 arg2, T3 arg3)
-                where T : Entity
+        public void Invoke<T, T1, T2, T3>(T self, string invokeType, T1 arg1, T2 arg2, T3 arg3) where T : Entity
         {
+            if (self == null || self.IsDisposed)
+            {
+                Log.Error($"self is null or disposed,{invokeType}");
+                return;
+            }
+
             try
             {
                 var invoker = GetInvoker<IYIUIInvokeHandler<T1, T2, T3>>(invokeType);
@@ -124,9 +144,14 @@ namespace ET
             }
         }
 
-        public void Invoke<T, T1, T2, T3, T4>(T self, string invokeType, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
-                where T : Entity
+        public void Invoke<T, T1, T2, T3, T4>(T self, string invokeType, T1 arg1, T2 arg2, T3 arg3, T4 arg4) where T : Entity
         {
+            if (self == null || self.IsDisposed)
+            {
+                Log.Error($"self is null or disposed,{invokeType}");
+                return;
+            }
+
             try
             {
                 var invoker = GetInvoker<IYIUIInvokeHandler<T1, T2, T3, T4>>(invokeType);
@@ -154,9 +179,14 @@ namespace ET
             }
         }
 
-        public void Invoke<T, T1, T2, T3, T4, T5>(T self, string invokeType, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
-                where T : Entity
+        public void Invoke<T, T1, T2, T3, T4, T5>(T self, string invokeType, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5) where T : Entity
         {
+            if (self == null || self.IsDisposed)
+            {
+                Log.Error($"self is null or disposed,{invokeType}");
+                return;
+            }
+
             try
             {
                 var invoker = GetInvoker<IYIUIInvokeHandler<T1, T2, T3, T4, T5>>(invokeType);

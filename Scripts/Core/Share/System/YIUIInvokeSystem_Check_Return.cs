@@ -38,37 +38,37 @@
             return invoker != null;
         }
 
-        public bool InvokeTask(string invokeType)
+        public bool CheckInvokeTask(string invokeType)
         {
             var invoker = GetInvoker<IYIUIInvokeReturnHandler<ETTask>>(invokeType, false);
             return invoker != null;
         }
 
-        public bool InvokeTask<T1>(string invokeType)
+        public bool CheckInvokeTask<T1>(string invokeType)
         {
             var invoker = GetInvoker<IYIUIInvokeReturnHandler<T1, ETTask>>(invokeType, false);
             return invoker != null;
         }
 
-        public bool InvokeTask<T1, T2>(string invokeType)
+        public bool CheckInvokeTask<T1, T2>(string invokeType)
         {
             var invoker = GetInvoker<IYIUIInvokeReturnHandler<T1, T2, ETTask>>(invokeType, false);
             return invoker != null;
         }
 
-        public bool InvokeTask<T1, T2, T3>(string invokeType)
+        public bool CheckInvokeTask<T1, T2, T3>(string invokeType)
         {
             var invoker = GetInvoker<IYIUIInvokeReturnHandler<T1, T2, T3, ETTask>>(invokeType, false);
             return invoker != null;
         }
 
-        public bool InvokeTask<T1, T2, T3, T4>(string invokeType)
+        public bool CheckInvokeTask<T1, T2, T3, T4>(string invokeType)
         {
             var invoker = GetInvoker<IYIUIInvokeReturnHandler<T1, T2, T3, T4, ETTask>>(invokeType, false);
             return invoker != null;
         }
 
-        public bool InvokeTask<T1, T2, T3, T4, T5>(string invokeType)
+        public bool CheckInvokeTask<T1, T2, T3, T4, T5>(string invokeType)
         {
             var invoker = GetInvoker<IYIUIInvokeReturnHandler<T1, T2, T3, T4, T5, ETTask>>(invokeType, false);
             return invoker != null;

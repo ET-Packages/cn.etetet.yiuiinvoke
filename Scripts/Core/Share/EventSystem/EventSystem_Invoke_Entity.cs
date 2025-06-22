@@ -5,21 +5,11 @@ namespace ET
     /// <summary>
     /// InvokeEntity事件
     /// </summary>
-    public partial class EventSystem
+    public static class YIUIEventSystem
     {
-        public void InvokeEntity<A>(Entity entity, long type, A args) where A : struct
+        public static void InvokeEntity<A>(this EventSystem self, Entity entity, long type, A args) where A : struct
         {
-            if (!this.allInvokers.TryGetValue(typeof(A), out var invokeHandlers))
-            {
-                throw new Exception($"Invoke error1: {type} {typeof(A).FullName}");
-            }
-
-            if (!invokeHandlers.TryGetValue(type, out var invokeHandler))
-            {
-                throw new Exception($"Invoke error2: {type} {typeof(A).FullName}");
-            }
-
-            var aInvokeHandler = invokeHandler as AInvokeEntityHandler<A>;
+            var aInvokeHandler = self.GetInvoker<AInvokeEntityHandler<A>, A>(type);
             if (aInvokeHandler == null)
             {
                 throw new Exception($"Invoke error3, not AInvokeHandler: {type} {typeof(A).FullName}");
@@ -28,19 +18,9 @@ namespace ET
             aInvokeHandler.Handle(entity, args);
         }
 
-        public T InvokeEntity<A, T>(Entity entity, long type, A args) where A : struct
+        public static T InvokeEntity<A, T>(this EventSystem self, Entity entity, long type, A args) where A : struct
         {
-            if (!this.allInvokers.TryGetValue(typeof(A), out var invokeHandlers))
-            {
-                throw new Exception($"Invoke error4: {type} {typeof(A).FullName}");
-            }
-
-            if (!invokeHandlers.TryGetValue(type, out var invokeHandler))
-            {
-                throw new Exception($"Invoke error5: {type} {typeof(A).FullName}");
-            }
-
-            var aInvokeHandler = invokeHandler as AInvokeEntityHandler<A, T>;
+            var aInvokeHandler = self.GetInvoker<AInvokeEntityHandler<A, T>, A>(type);
             if (aInvokeHandler == null)
             {
                 throw new Exception($"Invoke error6, not AInvokeHandler: {type} {typeof(A).FullName} {typeof(T).FullName} ");
@@ -49,14 +29,14 @@ namespace ET
             return aInvokeHandler.Handle(entity, args);
         }
 
-        public void InvokeEntity<A>(Entity entity, A args) where A : struct
+        public static void InvokeEntity<A>(this EventSystem self, Entity entity, A args) where A : struct
         {
-            InvokeEntity(entity, 0, args);
+            self.InvokeEntity(entity, 0, args);
         }
 
-        public T InvokeEntity<A, T>(Entity entity, A args) where A : struct
+        public static T InvokeEntity<A, T>(this EventSystem self, Entity entity, A args) where A : struct
         {
-            return InvokeEntity<A, T>(entity, 0, args);
+            return self.InvokeEntity<A, T>(entity, 0, args);
         }
     }
 }

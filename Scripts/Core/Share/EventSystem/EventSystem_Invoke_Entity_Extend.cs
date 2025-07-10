@@ -4,7 +4,7 @@
     {
         public static void YIUIInvokeEntity<A>(this EventSystem self, Entity entity, long invokeType, A args) where A : struct
         {
-            self?.InvokeEntity(entity, invokeType, args);
+            self.InvokeEntity(entity, invokeType, args);
         }
 
         public static T YIUIInvokeEntity<A, T>(this EventSystem self, Entity entity, long invokeType, A args) where A : struct

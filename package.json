@@ -14,7 +14,9 @@
     "url": "https://github.com/ET-Packages/cn.etetet.yiuiinvoke"
   },
   "relatedPackages": {},
-  "dependencies": {},
+  "dependencies": {
+    "cn.etetet.core": "4.0.0"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@ET-Packages"
   }

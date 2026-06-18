@@ -5,6 +5,9 @@ using System.Reflection;
 namespace ET
 {
     [CodeProcess]
+    #if !YIUIMACRO_ALLOWINSTANCE_CLOSE
+    [AllowInstance]
+    #endif
     public partial class YIUIListenerInvokeSystem : Singleton<YIUIListenerInvokeSystem>, ISingletonAwake
     {
         private readonly Dictionary<string, List<(int, IYIUIInvokeBaseHandler)>> m_AllListenerInvokersBefore = new();
